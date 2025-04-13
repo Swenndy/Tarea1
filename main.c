@@ -1,9 +1,11 @@
 
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
 #include "arraylist.c"
+/*Esta estructura sirve para almacenar los datos de cada ticket*/
 typedef struct
 {
   int id;
@@ -11,10 +13,13 @@ typedef struct
   int priority;
   char arrival_time[20];
 } ticket;
+/*Esta funcion limpia la pantalla*/
 void limpiarPantalla()
+
 {
   system("clear || cls");
 }
+/*Esta funcion muestra el menu principal*/
 void mostrarMenuPrincipal()
 {
   puts("========================================");
@@ -28,14 +33,14 @@ void mostrarMenuPrincipal()
   puts("5) Buscar ticket por ID y mostrar detalles");
   puts("6) Salir");
 }
-
+/*Esta funcion asigna la hora de llegada al ticket*/
 void asignarHora(ticket *p)
 {
   time_t aux;
   time(&aux);
   strftime(p->arrival_time, sizeof(p->arrival_time), "%H:%M:%S", localtime(&aux));
 }
-
+/*Esta funcion registra un ticket y le asigna baja prioridad de forma predeterminada*/
 void registrar_ticket(List *ticket_Baja)
 {
   limpiarPantalla();
@@ -53,6 +58,7 @@ void registrar_ticket(List *ticket_Baja)
   printf("ticket registrado con exito.\n\n");
   return;
 }
+/*Esta funcion asigna la prioridad del ticket a alta o media dependiendo de la seleccion del usuario*/
 void asignar_Prioridad(List *ticket_Alta, List *ticket_Media, List *ticket_Baja)
 {
   limpiarPantalla();
@@ -105,6 +111,7 @@ void asignar_Prioridad(List *ticket_Alta, List *ticket_Media, List *ticket_Baja)
     }
   }
 }
+/*Esta funcion muestra los tickets pendientes en la lista de alta, media y baja prioridad*/
 void mostrarPendientes(List *ticket_Alta, List *ticket_Media, List *ticket_Baja)
 {
   limpiarPantalla();
@@ -137,6 +144,7 @@ void mostrarPendientes(List *ticket_Alta, List *ticket_Media, List *ticket_Baja)
   free(ticket_aux);
   printf("\n");
 }
+/*Esta funcion procesa el siguiente ticket en la lista de alta, media y baja prioridad */
 void procesar_Siguiente(List *ticket_Alta, List *ticket_Media, List *ticket_Baja)
 {
   limpiarPantalla();
@@ -177,6 +185,7 @@ void procesar_Siguiente(List *ticket_Alta, List *ticket_Media, List *ticket_Baja
   }
   free(ticket_aux);
 }
+/*Esta funcion busca un ticket por ID y muestra sus detalles*/
 void buscar_ticket(List *ticket_Alta, List *ticket_Media, List *ticket_Baja)
 {
   limpiarPantalla();
@@ -226,6 +235,7 @@ void buscar_ticket(List *ticket_Alta, List *ticket_Media, List *ticket_Baja)
   printf("\n");
   return;
 }
+/*Esta funcion crea una lista de tickets*/
 int main()
 {
   List *ticket_Alta = create_list();
