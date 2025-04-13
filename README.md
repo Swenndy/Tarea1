@@ -31,7 +31,9 @@ Este programa en C implementa un sistema de gestión de tickets que permite regi
 3. Compila el programa:
    ```bash
    gcc main.c -o main
+   ./main
 ## 💡 Ejemplo de uso
+```bash
 ========================================
      Sistema de Gestión ticket
 ========================================
