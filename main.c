@@ -17,7 +17,7 @@ void limpiarPantalla()
 void mostrarMenuPrincipal()
 {
   puts("========================================");
-  puts("     Sistema de Gestión ticket");
+  puts("     Sistema de Gestion ticket");
   puts("========================================");
 
   puts("1) Registrar ticket");
@@ -37,22 +37,24 @@ void asignarHora(ticket *p)
 
 void registrar_ticket(List *ticket_Baja)
 {
+  limpiarPantalla();
   ticket *new_ticket = (ticket *)malloc(sizeof(ticket));
   printf("\nIngrese el ID del ticket: ");
   scanf("%d", &new_ticket->id);
 
-  printf("Ingrese los Descripción del ticket: ");
+  printf("Ingrese los Descripcion del ticket: ");
   scanf(" %[^\n]", new_ticket->description);
 
   asignarHora(new_ticket);
   new_ticket->priority = 3; // Inicialmente se asigna baja prioridad
   pushBack(ticket_Baja, new_ticket);
 
-  printf("ticket registrado con éxito.\n\n");
+  printf("ticket registrado con exito.\n\n");
   return;
 }
 void asignar_Prioridad(List *ticket_Alta, List *ticket_Media, List *ticket_Baja)
 {
+  limpiarPantalla();
   if (first(ticket_Baja) == NULL)
   {
     printf("No hay tickets\n");
@@ -74,13 +76,13 @@ void asignar_Prioridad(List *ticket_Alta, List *ticket_Media, List *ticket_Baja)
   }
   if (ticket_aux == NULL)
   {
-    printf("No se encontró el ticket con ID %d.\n", ID_Aux);
+    printf("No se encontro el ticket con ID %d.\n", ID_Aux);
     return;
   }
   else
   {
     int nueva_prioridad;
-    printf("Ingrese la prioridad del ticket \n1) Alta\n2) Media\n3) Baja\nSeleccione una opción: ");
+    printf("Ingrese la prioridad del ticket \n1) Alta\n2) Media\n3) Baja\nSeleccione una opcion: ");
     scanf("%d", &nueva_prioridad);
     ticket_aux->priority = nueva_prioridad;
 
@@ -104,6 +106,7 @@ void asignar_Prioridad(List *ticket_Alta, List *ticket_Media, List *ticket_Baja)
 }
 void mostrarPendientes(List *ticket_Alta, List *ticket_Media, List *ticket_Baja)
 {
+  limpiarPantalla();
   printf("\nLista de ticket pendientes:\n\n");
   printf("Prioridad Alta:\n");
   ticket *ticket_aux = (ticket *)malloc(sizeof(ticket));
@@ -111,7 +114,7 @@ void mostrarPendientes(List *ticket_Alta, List *ticket_Media, List *ticket_Baja)
   ticket_aux = first(ticket_Alta);
   while (ticket_aux != NULL)
   {
-    printf("ID: %d\nDescripción: %s\nHora de llegada: %s\n\n", ticket_aux->id, ticket_aux->description, ticket_aux->arrival_time);
+    printf("ID: %d\nDescripcion: %s\nHora de llegada: %s\n\n", ticket_aux->id, ticket_aux->description, ticket_aux->arrival_time);
     ticket_aux = next(ticket_Alta);
   }
 
@@ -119,7 +122,7 @@ void mostrarPendientes(List *ticket_Alta, List *ticket_Media, List *ticket_Baja)
   ticket_aux = first(ticket_Media);
   while (ticket_aux != NULL)
   {
-    printf("ID: %d\nDescripción: %s\nHora de llegada: %s\n\n", ticket_aux->id, ticket_aux->description, ticket_aux->arrival_time);
+    printf("ID: %d\nDescripcion: %s\nHora de llegada: %s\n\n", ticket_aux->id, ticket_aux->description, ticket_aux->arrival_time);
     ticket_aux = next(ticket_Media);
   }
 
@@ -127,7 +130,7 @@ void mostrarPendientes(List *ticket_Alta, List *ticket_Media, List *ticket_Baja)
   ticket_aux = first(ticket_Baja);
   while (ticket_aux != NULL)
   {
-    printf("ID: %d\nDescripción: %s\nHora de llegada: %s\n\n", ticket_aux->id, ticket_aux->description, ticket_aux->arrival_time);
+    printf("ID: %d\nDescripcion: %s\nHora de llegada: %s\n\n", ticket_aux->id, ticket_aux->description, ticket_aux->arrival_time);
     ticket_aux = next(ticket_Baja);
   }
   free(ticket_aux);
@@ -135,12 +138,13 @@ void mostrarPendientes(List *ticket_Alta, List *ticket_Media, List *ticket_Baja)
 }
 void procesar_Siguiente(List *ticket_Alta, List *ticket_Media, List *ticket_Baja)
 {
+  limpiarPantalla();
   ticket *ticket_aux = (ticket *)malloc(sizeof(ticket));
   ticket_aux = first(ticket_Alta);
   if (ticket_aux != NULL)
   {
     printf("ticket de alta prioridad:\n");
-    printf("ID: %d\nDescripción: %s\nHora de llegada: %s\n\n", ticket_aux->id, ticket_aux->description, ticket_aux->arrival_time);
+    printf("ID: %d\nDescripcion: %s\nHora de llegada: %s\n\n", ticket_aux->id, ticket_aux->description, ticket_aux->arrival_time);
     popFront(ticket_Alta);
   }
   else
@@ -149,7 +153,7 @@ void procesar_Siguiente(List *ticket_Alta, List *ticket_Media, List *ticket_Baja
     if (ticket_aux != NULL)
     {
       printf("ticket de media prioridad:\n");
-      printf("ID: %d\nDescripción: %s\nHora de llegada: %s\n\n", ticket_aux->id, ticket_aux->description, ticket_aux->arrival_time);
+      printf("ID: %d\nDescripcion: %s\nHora de llegada: %s\n\n", ticket_aux->id, ticket_aux->description, ticket_aux->arrival_time);
       popFront(ticket_Media);
     }
     else
@@ -158,7 +162,7 @@ void procesar_Siguiente(List *ticket_Alta, List *ticket_Media, List *ticket_Baja
       if (ticket_aux != NULL)
       {
         printf("ticket de baja prioridad:\n");
-        printf("ID: %d\nDescripción: %s\nHora de llegada: %s\n\n", ticket_aux->id, ticket_aux->description, ticket_aux->arrival_time);
+        printf("ID: %d\nDescripcion: %s\nHora de llegada: %s\n\n", ticket_aux->id, ticket_aux->description, ticket_aux->arrival_time);
         popFront(ticket_Baja);
       }
       else
@@ -171,6 +175,7 @@ void procesar_Siguiente(List *ticket_Alta, List *ticket_Media, List *ticket_Baja
 }
 void buscar_ticket(List *ticket_Alta, List *ticket_Media, List *ticket_Baja)
 {
+  limpiarPantalla();
   int ID_Aux;
   printf("\nIngrese el ID del ticket:");
   scanf("%d", &ID_Aux);
@@ -183,7 +188,7 @@ void buscar_ticket(List *ticket_Alta, List *ticket_Media, List *ticket_Baja)
     {
       printf("\nticket encontrado\n");
       printf("Prioridad: Alta\n");
-      printf("ID: %d\nDescripción: %s\nHora de llegada: %s\n\n", ticket_aux->id, ticket_aux->description, ticket_aux->arrival_time);
+      printf("ID: %d\nDescripcion: %s\nHora de llegada: %s\n\n", ticket_aux->id, ticket_aux->description, ticket_aux->arrival_time);
       return;
     }
     ticket_aux = next(ticket_Alta);
@@ -195,7 +200,7 @@ void buscar_ticket(List *ticket_Alta, List *ticket_Media, List *ticket_Baja)
     {
       printf("\nticket encontrado\n");
       printf("Prioridad: Media\n");
-      printf("ID: %d\nDescripción: %s\nHora de llegada: %s\n\n", ticket_aux->id, ticket_aux->description, ticket_aux->arrival_time);
+      printf("ID: %d\nDescripcion: %s\nHora de llegada: %s\n\n", ticket_aux->id, ticket_aux->description, ticket_aux->arrival_time);
       return;
     }
     ticket_aux = next(ticket_Media);
@@ -207,25 +212,25 @@ void buscar_ticket(List *ticket_Alta, List *ticket_Media, List *ticket_Baja)
     {
       printf("\nticket encontrado\n");
       printf("Prioridad: Baja\n");
-      printf("ID: %d\nDescripción: %s\nHora de llegada: %s\n\n", ticket_aux->id, ticket_aux->description, ticket_aux->arrival_time);
+      printf("ID: %d\nDescripcion: %s\nHora de llegada: %s\n\n", ticket_aux->id, ticket_aux->description, ticket_aux->arrival_time);
       return;
     }
     ticket_aux = next(ticket_Baja);
   }
-  printf("\nNo se encontró el ticket con ID %d.\n", ID_Aux);
+  printf("\nNo se encontro el ticket con ID %d.\n", ID_Aux);
   free(ticket_aux);
   printf("\n");
   return;
 }
 int main()
 {
-  limpiarPantalla();
   List *ticket_Alta = create_list();
   List *ticket_Media = create_list();
   List *ticket_Baja = create_list();
   int opcion;
   do
   {
+    limpiarPantalla();
     mostrarMenuPrincipal();
     printf("Seleccione una opción: ");
     scanf("%d", &opcion);
