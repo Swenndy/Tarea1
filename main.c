@@ -145,6 +145,7 @@ void procesar_Siguiente(List *ticket_Alta, List *ticket_Media, List *ticket_Baja
   {
     printf("ticket de alta prioridad:\n");
     printf("ID: %d\nDescripcion: %s\nHora de llegada: %s\n\n", ticket_aux->id, ticket_aux->description, ticket_aux->arrival_time);
+    printf("Ticket procesado.");
     popFront(ticket_Alta);
   }
   else
@@ -154,6 +155,7 @@ void procesar_Siguiente(List *ticket_Alta, List *ticket_Media, List *ticket_Baja
     {
       printf("ticket de media prioridad:\n");
       printf("ID: %d\nDescripcion: %s\nHora de llegada: %s\n\n", ticket_aux->id, ticket_aux->description, ticket_aux->arrival_time);
+      printf("Ticket procesado.");
       popFront(ticket_Media);
     }
     else
@@ -163,6 +165,7 @@ void procesar_Siguiente(List *ticket_Alta, List *ticket_Media, List *ticket_Baja
       {
         printf("ticket de baja prioridad:\n");
         printf("ID: %d\nDescripcion: %s\nHora de llegada: %s\n\n", ticket_aux->id, ticket_aux->description, ticket_aux->arrival_time);
+        printf("Ticket procesado.");
         popFront(ticket_Baja);
       }
       else
