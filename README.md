@@ -31,3 +31,29 @@ Este programa en C implementa un sistema de gestión de tickets que permite regi
 3. Compila el programa:
    ```bash
    gcc main.c -o main
+## 💡 Ejemplo de uso
+========================================
+     Sistema de Gestión ticket
+========================================
+1) Registrar ticket
+2) Asignar prioridad a ticket
+3) Mostrar lista de ticket pendientes
+4) Procesar siguiente ticket
+5) Buscar ticket por ID y mostrar detalles
+6) Salir
+Seleccione una opción: 1
+
+Ingrese el ID del ticket: 101
+Ingrese los Descripción del ticket: Problema con conexión WiFi
+ticket registrado con éxito.
+
+Seleccione una opción: 2
+
+Ingrese el ID del ticket: 101
+Ingrese la prioridad del ticket 
+1) Alta
+2) Media
+3) Baja
+Seleccione una opción: 1
+ticket asignado a la lista de alta prioridad.
+
