@@ -26,3 +26,8 @@ Este programa en C implementa un sistema de gestión de tickets que permite regi
 
 1. Asegúrate de tener instalado un compilador de C (como `gcc`).
 2. Coloca los siguientes archivos en el mismo directorio:
+   - `main.c` (este archivo que contiene el código principal).
+   - `arraylist.c` y `arraylist.h` (implementación de listas enlazadas).
+3. Compila el programa:
+   ```bash
+   gcc main.c -o main
