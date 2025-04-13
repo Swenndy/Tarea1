@@ -230,9 +230,8 @@ int main()
   int opcion;
   do
   {
-    limpiarPantalla();
     mostrarMenuPrincipal();
-    printf("Seleccione una opción: ");
+    printf("Seleccione una opcion: ");
     scanf("%d", &opcion);
     switch (opcion)
     {
