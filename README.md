@@ -61,3 +61,6 @@ Ingrese la prioridad del ticket
 Seleccione una opción: 1
 ticket asignado a la lista de alta prioridad.
 ```
+##📜 Explicación de cada opción
+###1️⃣ Registrar ticket
+
