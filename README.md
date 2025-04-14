@@ -16,7 +16,7 @@ Este programa en C implementa un sistema de gestión de tickets que permite regi
 
 ## 🚫 Funcionalidades no implementadas
 
-- No hay persistencia de datos (los tickets no se guardan en un archivo).
+- Los datos no se almacenan (los tickets no se guardan en un archivo).
 - No se implementó validación para evitar IDs duplicados.
 - No hay validación estricta de entradas inválidas (por ejemplo, ingresar letras cuando se espera un número puede causar errores).
 
@@ -29,6 +29,8 @@ Este programa en C implementa un sistema de gestión de tickets que permite regi
    - `main.c` (este archivo que contiene el código principal).
    - `arraylist.c` y `arraylist.h` (implementación de listas enlazadas).
 3. Compila el programa:
+   1.Ejecuta el primer comando para crear el archivo .exe
+   2.En caso de querer ejecutarlo en el terminal ejecutar el segundo comando despues del primero.
    ```bash
    gcc main.c -o main
    ./main
