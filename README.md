@@ -61,6 +61,78 @@ Ingrese la prioridad del ticket
 Seleccione una opción: 1
 ticket asignado a la lista de alta prioridad.
 ```
-##📜 Explicación de cada opción
-###1️⃣ Registrar ticket
+## 📜 Explicación de cada opción
+### 1️⃣ Registrar ticket
+Permite ingresar un nuevo ticket con un **ID** único y una **descripción**.
+✅ El ticket se guarda con prioridad baja por defecto y se le asigna automáticamente la hora de llegada.
+📌 Ejemplo:
+```bash
+Ingrese el ID del ticket: 101
+Ingrese la Descripcion del ticket: Problema con la impresora
+Ticket registrado con éxito.
+```
+### 2️⃣ Asignar prioridad a ticket
+Permite modificar la prioridad de un ticket previamente registrado.
+🔍 El usuario debe ingresar el ID del ticket. Si se encuentra en la lista de baja prioridad, se le puede asignar:
+- 1 → Alta prioridad.
+- 2 → Media prioridad.
+- 3 → Mantener baja prioridad.
+```bash
+Ingrese el ID del ticket: 101
+Ingrese la prioridad del ticket 
+1) Alta
+2) Media
+3) Baja
+Seleccione una opción: 1
+Ticket asignado a la lista de alta prioridad.
+```
+### 3️⃣ Mostrar lista de tickets pendientes
+#### 📋 Muestra todos los tickets pendientes organizados por:
+- Prioridad Alta.
+- Prioridad Media.
+- Prioridad Baja.
+#### Cada ticket muestra:
+- ID
+- Descripción
+- Hora de llegada
+### 📌 Ejemplo:
+```bash
+Prioridad Alta:
+ID: 101
+Descripción: Problema con la impresora
+Hora de llegada: 10:32:15
+```
+### 4️⃣ Procesar siguiente ticket
+#### ⚙️ Procesa el ticket con mayor prioridad disponible:
 
+- Primero busca en alta prioridad.
+- Si no hay, busca en media.
+- Si tampoco hay, busca en baja.
+
+#### El ticket procesado es el primero que llegó dentro de su lista y se elimina del sistema.
+
+#### 📌 Ejemplo:
+```bash
+Ticket de alta prioridad:
+ID: 101
+Descripción: Problema con la impresora
+Hora de llegada: 10:32:15
+Ticket procesado.
+```
+### 5️⃣ Buscar ticket por ID
+#### 🔎 Permite buscar un ticket ingresando su ID.
+#### Si el ticket se encuentra, muestra:
+- Prioridad (Alta / Media / Baja)
+- Descripción
+- Hora de llegada
+#### 📌 Ejemplo:
+```bash
+Ingrese el ID del ticket: 101
+Ticket encontrado
+Prioridad: Alta
+ID: 101
+Descripción: Problema con la impresora
+Hora de llegada: 10:32:15
+```
+### 6️⃣ Salir
+#### ❌ Cierra el programa.
