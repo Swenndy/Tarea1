@@ -1,6 +1,6 @@
  # 🛠️ Sistema de Gestión de Tickets
 
-Este programa en C implementa un sistema de gestión de tickets que permite registrar, clasificar por prioridad y procesar solicitudes. Los tickets pueden tener prioridad **alta**, **media** o **baja**, y se procesan en orden de prioridad y llegada.
+Este programa en C utiliza un sistema de gestión de tickets que permite registrar, clasificar por prioridad y procesar solicitudes. Los tickets pueden tener prioridad **alta**, **media** o **baja**, y se gestionan en orden de prioridad y llegada.
 
 ---
 
