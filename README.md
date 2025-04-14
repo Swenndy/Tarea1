@@ -29,8 +29,8 @@ Este programa en C implementa un sistema de gestión de tickets que permite regi
    - `main.c` (este archivo que contiene el código principal).
    - `arraylist.c` y `arraylist.h` (implementación de listas enlazadas).
 3. Compila el programa:
-   -Ejecuta el primer comando para crear el archivo .exe
-   -En caso de querer ejecutarlo en el terminal ejecutar el segundo comando despues del primero.
+   - Ejecuta el primer comando para crear el archivo .exe
+   - En caso de querer ejecutarlo en el terminal ejecutar el segundo comando despues del primero.
    ```bash
    gcc main.c -o main
    ./main
