@@ -63,9 +63,9 @@ ticket asignado a la lista de alta prioridad.
 ```
 ## 📜 Explicación de cada opción
 ### 1️⃣ Registrar ticket
-Permite ingresar un nuevo ticket con un **ID** único y una **descripción**.
-✅ El ticket se guarda con prioridad baja por defecto y se le asigna automáticamente la hora de llegada.
-📌 Ejemplo:
+#### Permite ingresar un nuevo ticket con un **ID** único y una **descripción**.
+#### ✅ El ticket se guarda con prioridad baja por defecto y se le asigna automáticamente la hora de llegada.
+#### 📌 Ejemplo:
 ```bash
 Ingrese el ID del ticket: 101
 Ingrese la Descripcion del ticket: Problema con la impresora
@@ -95,7 +95,7 @@ Ticket asignado a la lista de alta prioridad.
 - ID
 - Descripción
 - Hora de llegada
-### 📌 Ejemplo:
+#### 📌 Ejemplo:
 ```bash
 Prioridad Alta:
 ID: 101
